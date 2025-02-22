@@ -1,10 +1,10 @@
-import { FormEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { Chevron } from '../assets/SVGs';
 
 const ChatBox = ({ setUserMessage }: { setUserMessage: Function }) => {
     const [value, setValue] = useState('');
 
-    const handleChange = (e: FormEvent) => {
+    const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setValue(e.target.value);
     };
 

@@ -1,5 +1,0 @@
-Come up with prompt
-Judge Starts
-Play by play between user and Bot add typewriter
-Judge gives verdict
-Use Redis to maintain chat

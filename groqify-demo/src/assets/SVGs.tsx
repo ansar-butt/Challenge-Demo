@@ -5,7 +5,7 @@ const Chevron = ({
     onClick = () => {},
 }: {
     className?: string;
-    onClick: MouseEventHandler;
+    onClick?: MouseEventHandler;
 }) => (
     <svg
         onClick={onClick}

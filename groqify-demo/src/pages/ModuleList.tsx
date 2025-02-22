@@ -51,7 +51,7 @@ const ModuleList = () => {
                         >
                             {lesson.title}
                             <button
-                                className={`!bg-transparent text-white p-1 text-sm flex items-center cursor-pointer`}
+                                className={`!bg-transparent text-white p-1 text-sm flex items-center ${index == 0 && !completed ? 'cursor-pointer' : 'cursor-not-allowed'}`}
                                 onClick={() => {
                                     if (index == 0 && !completed)
                                         navigate(lesson.url);
