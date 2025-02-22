@@ -1,5 +1,3 @@
-Create a homepage listing different compliance topics
-Select HealthCare -> Only Active
 Show a list of Paths 
 Select First -> Only Active
 Come up with prompt
