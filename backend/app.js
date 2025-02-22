@@ -9,14 +9,13 @@ const corsOptions = {
 
 var chatbot = require("./routes/chatbot");
 var modules = require("./routes/modules");
+var lesson = require("./routes/lessons");
 
 app.use(cors(corsOptions));
+app.use(express.json());
 app.use("/chat", chatbot);
 app.use("/modules-list", modules);
-
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
+app.use("/lessons-list", lesson);
 
 const port = 3000;
 

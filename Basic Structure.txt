@@ -1,5 +1,3 @@
-Show a list of Paths 
-Select First -> Only Active
 Come up with prompt
 Judge Starts
 Play by play between user and Bot add typewriter

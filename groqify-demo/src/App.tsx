@@ -5,7 +5,7 @@ import ModuleTemplate from './pages/ModuleTemplate';
 
 const App = () => {
     return (
-        <div className="mt-4">
+        <div>
             <Routes>
                 <Route index element={<HomePage />} />
                 <Route path="/:module" element={<ModuleList />} />

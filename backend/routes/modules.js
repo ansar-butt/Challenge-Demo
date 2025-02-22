@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/", (req, res) => {
   // List of modules. Should be obtained from a database, but hardcoded for the purpose of this demo.
   const modules = [
     {

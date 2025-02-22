@@ -3,12 +3,14 @@ var router = express.Router();
 require("dotenv").config();
 const together = require("together-ai");
 
-router.get("/", async (req, res) => {
-  const togetherClient = new together.Together({
-    apiKey: process.env.TOGETHER_API_KEY,
-  });
+const togetherClient = new together.Together({
+  apiKey: process.env.TOGETHER_API_KEY,
+});
 
-  const messages = req.msgs.map((message) => ({
+router.post("/", async (req, res) => {
+  const messageList = [req.body.message];
+
+  const messages = messageList.map((message) => ({
     role: "user",
     content: message,
   }));
@@ -20,9 +22,7 @@ router.get("/", async (req, res) => {
       stream: false,
     })
     .then((response) => {
-      console.log(response.choices[0].message.content);
-      res.json("");
-      //   res.json()
+      res.json(response.choices[0].message.content);
     })
     .catch((err) => console.log(err));
 });
