@@ -1,7 +1,7 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Check, Chevron, Lock } from '../assets/SVGs';
+import { getLessonCompletion, getLessonList } from '../services/apiServices';
 
 type Lesson = {
     title: string;
@@ -10,23 +10,16 @@ type Lesson = {
 
 const ModuleList = () => {
     const navigate = useNavigate();
-    const location = useLocation();
     const [completed, setCompleted] = useState(false);
 
     const [lessonList, setLessonList] = useState<Lesson[]>([]);
 
-    const { pathname } = location;
-
     useEffect(() => {
-        axios
-            .get(`${__API_PATH__}/lessons-list`, {
-                params: { moduleName: pathname },
-            })
+        getLessonList()
             .then((res) => setLessonList(res.data as Lesson[]))
             .catch((err) => console.log(err));
 
-        axios
-            .get(`${__API_PATH__}/lessons-list/completed`)
+        getLessonCompletion()
             .then((res) => setCompleted(res.data))
             .catch((err) => console.log(err));
     }, []);

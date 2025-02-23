@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { Button, Card } from 'flowbite-react';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Chevron } from '../assets/SVGs';
+import { getModuleList } from '../services/apiServices';
 
 type Module = { title: string; summary: string };
 
@@ -10,8 +10,7 @@ const HomePage = () => {
     const navigate = useNavigate();
     const [moduleList, setModuleList] = useState<Module[]>([]);
     useEffect(() => {
-        axios
-            .get(`${__API_PATH__}/modules-list`)
+        getModuleList()
             .then((res) => setModuleList(res.data as Module[]))
             .catch((err) => console.log(err));
     }, []);

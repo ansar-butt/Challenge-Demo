@@ -1,26 +1,23 @@
 import { useEffect, useState } from 'react';
 import ChatBox from '../components/ChatBox';
 import ChatBoxAI from '../components/ChatBoxAI';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { getAIChat } from '../services/apiServices';
 
 const ModuleTemplate = () => {
     const navigate = useNavigate();
     const [userMessage, setUserMessage] = useState(
-        'Give me a breif summary about HIPAA'
+        '"Scenario: HIPAA Compliance in a Hospital Setting\nBackground:\nYou are a compliance office at CityCare Hospital, responsible for ensuring that all departments follow Healthcare & Patient Safety compliance laws, including HIPAA (Health Insurance Portability and Accountability Act) regulations.\nSituation:A nurse accidentally sends a patients medical report to the wrong email address, which belongs to someone outside the hospital. The patient, Mr. Thompson, finds out and files a complaint." Nudge the user to identify compliance violations in this scenario but dont actually point out the violations'
     );
     const [botMessage, setBotMessage] = useState('');
     const [judgeMessage, setJudgeMessage] = useState(
-        'In this session we will discuss HIPPA compliance. Let the session commence'
+        'Scenario: HIPAA Compliance in a Hospital Setting\nBackground:\nYou are a compliance office at CityCare Hospital, responsible for ensuring that all departments follow Healthcare & Patient Safety compliance laws, including HIPAA (Health Insurance Portability and Accountability Act) regulations.\nSituation:A nurse accidentally sends a patients medical report to the wrong email address, which belongs to someone outside the hospital. The patient, Mr. Thompson, finds out and files a complaint.\nPoint out any compliance issues in this scenario.'
     );
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true);
-        axios
-            .post(`${__API_PATH__}/chat`, {
-                message: userMessage,
-            })
+        getAIChat(userMessage)
             .then((res) => {
                 setBotMessage(res.data.message);
                 if (res.data.continue) setJudgeMessage('');

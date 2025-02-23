@@ -12,16 +12,20 @@ router.post("/", async (req, res) => {
   const chatData = await redisClient.get("chatData");
   const chatDataParsed = JSON.parse(chatData);
 
-  const messageList = [{ content: req.body.message, role: "user" }].concat(
-    chatDataParsed ?? []
-  );
-
-  console.log("Message List Length", messageList.length);
+  const messageList = chatDataParsed
+    ? chatDataParsed.concat({ content: req.body.message, role: "user" })
+    : [{ content: req.body.message, role: "user" }];
 
   togetherClient.chat.completions
     .create({
-      model: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
       messages: messageList,
+      model: "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      max_tokens: null,
+      temperature: 0.7,
+      top_p: 0.7,
+      top_k: 50,
+      repetition_penalty: 1,
+      stop: ["<|eot_id|>", "<|eom_id|>"],
       stream: false,
     })
     .then(async (response) => {
@@ -33,7 +37,6 @@ router.post("/", async (req, res) => {
           role: response.choices[0].message.role,
         },
       ]);
-      console.log("Assisstant Response", response.choices[0].message.content);
 
       await redisClient.set("chatData", JSON.stringify(messages));
       res.json({
@@ -41,7 +44,13 @@ router.post("/", async (req, res) => {
         continue: messages.length < 10,
       });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log("Err", err);
+      res.json({
+        message: "Error",
+        continue: true,
+      });
+    });
 });
 
 module.exports = router;
