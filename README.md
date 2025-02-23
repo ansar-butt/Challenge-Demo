@@ -25,13 +25,13 @@ The commands to start the Backend are:\
 `cd backend`\
 `npm install`\
 `node app.js`\
-The backend runs on the port `3000`\
+The backend runs on the port `3000`
 
 ### Running the Redis Server
 We will also need a running `redis-server` to work as a database for this demo. The documentation to install the `redis-server` can be found [here](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/).\
 The command to start the `redis-server` is:\
 `redis-server`\
-The Redis server is started with the default configuration and runs on port `6379`\
+The Redis server is started with the default configuration and runs on port `6379`
 
 ## Architecture
 
