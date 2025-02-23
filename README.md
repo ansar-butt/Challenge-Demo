@@ -9,29 +9,29 @@ This is a website that focuses on the creation of an AI-Driven Compliance Traini
 This demo creates a WebApp using Vite for the frontend. The demo uses React for the development of the frontend and express.js for the development of the backend.
 
 ### Running the frontend
-You will need to have `node`, `npm`, and `Yarn` installed on the device.
-Documentation to install `node` and `npm` can be found [here](https://nodejs.org/en/download).
-Documentation to install `yarn` can be found [here](https://classic.yarnpkg.com/lang/en/docs/install/).
-The commands to start the Frontend are:
-`cd groqify-demo`
-`yarn install`
-`yarn dev`
+You will need to have `node`, `npm`, and `yarn` installed on the device.\
+Documentation to install `node` and `npm` can be found [here](https://nodejs.org/en/download).\
+Documentation to install `yarn` can be found [here](https://classic.yarnpkg.com/lang/en/docs/install/).\
+The commands to start the Frontend are:\
+`cd groqify-demo`\
+`yarn install`\
+`yarn dev`\
 The frontend runs on the port `5173`
 
 ### Running the backend
-You will also need to create `.env` file which contains an API Key for the AI-Client. The client used is `together-api`, the content of the `.env` file is shown here temporarily for the sake of convenience.
-`TOGETHER_API_KEY = eea259b98148d87451f1291a0fe7152a5d089be2fd835575f82cd8e122b5b3d2`
-The commands to start the Backend are:
-`cd backend`
-`npm install`
-`node app.js`
-The backend runs on the port `3000`
+You will also need to create `.env` file which contains an API Key for the AI-Client. The client used is `together-api`, the content of the `.env` file is shown here temporarily for the sake of convenience.\
+`TOGETHER_API_KEY = eea259b98148d87451f1291a0fe7152a5d089be2fd835575f82cd8e122b5b3d2`\
+The commands to start the Backend are:\
+`cd backend`\
+`npm install`\
+`node app.js`\
+The backend runs on the port `3000`\
 
 ### Running the Redis Server
-We will also need a running `redis-server` to work as a database for this demo. The documentation to install the `redis-server` can be found [here](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/).
-The command to start the `redis-server` is:
-`redis-server`
-The Redis server is started with the default configuration and runs on port `6379`
+We will also need a running `redis-server` to work as a database for this demo. The documentation to install the `redis-server` can be found [here](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/).\
+The command to start the `redis-server` is:\
+`redis-server`\
+The Redis server is started with the default configuration and runs on port `6379`\
 
 ## Architecture
 
