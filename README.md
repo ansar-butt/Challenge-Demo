@@ -162,9 +162,13 @@ The Redis server is started with the default configuration and runs on port `637
 
 - Works as a database (RedisJSON) or a cache layer over SQL/NoSQL databases.
 
+**Use of States**
+
+- While a database like Firebase could have been used to store content such as Compliance categories and Lesson titles, for the demo they are hardcoded.
+
 ---
 
-### **API-Based AI Assistant**
+### API-Based AI Assistant
 
 **On-Demand AI without Expensive Infrastructure**
 
