@@ -19,8 +19,8 @@ The commands to start the Frontend are:\
 The frontend runs on the port `5173`
 
 ### Running the backend
-You will also need to create `.env` file which contains an API Key for the AI-Client. The client used is `together-api`, the content of the `.env` file is shown here temporarily for the sake of convenience.\
-`TOGETHER_API_KEY = eea259b98148d87451f1291a0fe7152a5d089be2fd835575f82cd8e122b5b3d2`\
+You will also need to create `.env` file which contains an API Key for the AI-Client. The client used is `together-api`, the sample contents of the `.env` file are as follows.\
+`TOGETHER_API_KEY = <YOUR_API_KEY>`\
 The commands to start the Backend are:\
 `cd backend`\
 `npm install`\
