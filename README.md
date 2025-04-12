@@ -1,4 +1,4 @@
-# Challenge-Demo
+# Trainify-AI
 
 ## Purpose
 
@@ -13,7 +13,7 @@ You will need to have `node`, `npm`, and `yarn` installed on the device.\
 Documentation to install `node` and `npm` can be found [here](https://nodejs.org/en/download).\
 Documentation to install `yarn` can be found [here](https://classic.yarnpkg.com/lang/en/docs/install/).\
 The commands to start the Frontend are:\
-`cd groqify-demo`\
+`cd frontend`\
 `yarn install`\
 `yarn dev`\
 The frontend runs on the port `5173`
@@ -54,7 +54,7 @@ The Redis server is started with the default configuration and runs on port `637
 
 #### Frontend Directory Structure
 
-    /groqify-demo
+    /frontend
     │── /src
     │   ├── /assets        	   # Static assets
     │   ├── /components        # Reusable UI components
@@ -179,3 +179,5 @@ The Redis server is started with the default configuration and runs on port `637
 
 - The AI service can be easily swapped or upgraded.
 - Supports text-based AI chat, embeddings, and fine-tuning.
+
+### Video Demo
