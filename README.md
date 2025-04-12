@@ -181,3 +181,5 @@ The Redis server is started with the default configuration and runs on port `637
 - Supports text-based AI chat, embeddings, and fine-tuning.
 
 ### Video Demo
+https://github.com/user-attachments/assets/6dd6172a-6fab-4d53-9b63-e25ff6340256
+
