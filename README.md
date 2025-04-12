@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This is a website that focuses on the creation of an AI-Driven Compliance Training platform. The WebApp gamifies the learning journey of the user while leveraging AI to enhance their experience.
+This project is an AI-driven training platform that gamifies the learning experience. It uses a Vite + React frontend, an Express.js backend, and Redis for data storage. The platform integrates with external AI APIs to provide dynamic, context-aware responses, enabling flexible and scalable training solutions for various domains.
 
 ## Setup
 
